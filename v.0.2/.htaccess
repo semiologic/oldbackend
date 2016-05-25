@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Rest Service
+RewriteRule ^rest/([^/]+)/?$ /dev/?cmd=$1&output=xml&%{QUERY_STRING} [L]
+</IfModule>
