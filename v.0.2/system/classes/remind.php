@@ -17,7 +17,7 @@ class remind extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 
 		event::attach('user_send_key', array(__CLASS__, 'send_key'));
 	} # init()
@@ -46,9 +46,9 @@ class remind extends request
 
 	public function map()
 	{
-		$this->data =& new data;
+		$this->data = new data;
 
-		$field = $this->data->fields['user_email'] =& new textfield($this->data->user_email, '');
+		$field = $this->data->fields['user_email'] = new textfield($this->data->user_email, '');
 		$field->type = 'email';
 		$field->required = true;
 		$field->id = 'user_email';
@@ -198,7 +198,7 @@ class remind extends request
 
 	public static function send_key(&$user)
 	{
-		$email =& new email;
+		$email = new email;
 		$email->to = $user->user_email;
 
 		$email->title = self::$captions->get(

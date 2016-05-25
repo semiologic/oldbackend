@@ -12,7 +12,7 @@ class defaults
 	# load()
 	#
 
-	function load()
+	static function load()
 	{
 		# System Commands
 		cmd::attach('login', 'login');

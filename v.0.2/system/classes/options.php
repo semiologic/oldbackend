@@ -146,7 +146,7 @@ class options
 	# on_exit()
 	#
 
-	public function on_exit()
+	static public function on_exit()
 	{
 		if ( active_user::is_admin() )
 		{

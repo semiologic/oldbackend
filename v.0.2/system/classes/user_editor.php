@@ -17,7 +17,7 @@ class user_editor extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 
 		event::attach('user_check_exists', array(__CLASS__, 'check_exists'));
 		event::attach('user_send_password', array(__CLASS__, 'send_password'));
@@ -118,15 +118,15 @@ class user_editor extends request
 		{
 		case 'register':
 		case 'new_user':
-			$this->data =& new user;
+			$this->data = new user;
 			break;
 
 		case 'profile':
-			$this->data =& new user(active_user::get('user_id'));
+			$this->data = new user(active_user::get('user_id'));
 			break;
 
 		case 'edit_user':
-			$this->data =& new user($this->args['user_id']);
+			$this->data = new user($this->args['user_id']);
 
 			if ( !$this->data->user_id )
 			{
@@ -145,7 +145,7 @@ class user_editor extends request
 		}
 
 
-		$field = $this->data->fields['user_pass1'] =& new textfield;
+		$field = $this->data->fields['user_pass1'] = new textfield;
 		if ( $this->cmd == 'register' || $this->cmd == 'new_user' )
 		{
 			$field->required = true;
@@ -157,7 +157,7 @@ class user_editor extends request
 		$field->bind($this->args['user_pass1']);
 
 
-		$field = $this->data->fields['user_pass2'] =& new textfield;
+		$field = $this->data->fields['user_pass2'] = new textfield;
 		$field->type = 'password';
 		$field->id = 'user_pass2';
 		$field->name = 'user_pass2';
@@ -172,7 +172,7 @@ class user_editor extends request
 
 		if ( $this->cmd == 'register' || $this->cmd == 'new_user' )
 		{
-			$field = $this->data->fields['node_key'] =& new field($this->data->node_key);
+			$field = $this->data->fields['node_key'] = new field($this->data->node_key);
 			$field->required = true;
 			$field->name = 'node_key';
 			$field->value =& $this->data->node_key;
@@ -228,7 +228,7 @@ class user_editor extends request
 					$profile_expires = date('m/d/Y', strtotime($profile_expires));
 				}
 
-				$field = $this->data->fields['profile'][$profile_id] =& new checkbox($this->data->profile[$profile_id], $profile_is_active);
+				$field = $this->data->fields['profile'][$profile_id] = new checkbox($this->data->profile[$profile_id], $profile_is_active);
 				$field->id = 'profile__' . $profile_id;
 				$field->name = 'profile[' . $profile_id . ']';
 				$field->label = $profile_name;
@@ -241,7 +241,7 @@ class user_editor extends request
 					$field->disabled = true;
 				}
 
-				$field = $this->data->fields['profile_expires'][$profile_id] =& new textfield($this->data->profile_expires[$profile_id], $profile_expires);
+				$field = $this->data->fields['profile_expires'][$profile_id] = new textfield($this->data->profile_expires[$profile_id], $profile_expires);
 				$field->type = 'date';
 				$field->id = 'profile_expires__' . $profile_id;
 				$field->name = 'profile_expires[' . $profile_id . ']';

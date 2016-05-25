@@ -17,7 +17,7 @@ class doc_editor extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions('docs');
+		self::$captions = new captions('docs');
 
 		event::attach('doc_check_exists', array(__CLASS__, 'check_exists'));
 	} # init()
@@ -70,13 +70,13 @@ class doc_editor extends request
 		switch ( $this->cmd )
 		{
 		case 'new_doc':
-			$this->data =& new doc;
+			$this->data = new doc;
 			break;
 
 		case 'edit_doc':
 			if ( isset($this->args['rev_id']) )
 			{
-				$this->data =& new doc("
+				$this->data = new doc("
 					SELECT	*
 					FROM	doc_revs
 					INNER JOIN doc_cats
@@ -92,7 +92,7 @@ class doc_editor extends request
 			}
 			elseif ( isset($this->args['doc_id']) )
 			{
-				$this->data =& new doc("
+				$this->data = new doc("
 					SELECT	*
 					FROM	doc_revs
 					INNER JOIN doc_cats
@@ -134,7 +134,7 @@ class doc_editor extends request
 
 		if ( $this->cmd == 'new_doc' )
 		{
-			$field = $this->data->fields['node_key'] =& new field($this->data->node_key);
+			$field = $this->data->fields['node_key'] = new field($this->data->node_key);
 			$field->required = true;
 			$field->name = 'node_key';
 			$field->value =& $this->data->node_key;
@@ -318,7 +318,7 @@ class doc_editor extends request
 		}
 		else
 		{
-			$field =& new textfield;
+			$field = new textfield;
 			$field->id = 'doc_cat';
 			$field->readonly = true;
 			$field->value = (string) $this->data->doc_cat;

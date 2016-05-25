@@ -19,7 +19,7 @@ class profile extends data
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 		self::$caps =& options::get('caps');
 		self::$all_caps =& options::get('all_caps');
 
@@ -72,15 +72,15 @@ class profile extends data
 
 	public function map()
 	{
-		$field = $this->fields['profile_id'] =& new field($this->profile_id);
+		$field = $this->fields['profile_id'] = new field($this->profile_id);
 		$field->type = 'id';
 
-		$field = $this->fields['profile_key'] =& new textfield($this->profile_key);
+		$field = $this->fields['profile_key'] = new textfield($this->profile_key);
 
-		$field = $this->fields['profile_name'] =& new textfield($this->profile_name, '');
+		$field = $this->fields['profile_name'] = new textfield($this->profile_name, '');
 		$field->required = true;
 
-		$field = $this->fields['profile_desc'] =& new textarea($this->profile_desc);
+		$field = $this->fields['profile_desc'] = new textarea($this->profile_desc);
 
 
 		new event(__CLASS__ . '_map', $this);

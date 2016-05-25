@@ -35,7 +35,7 @@ class db
 
 		try
 		{
-			self::$dbh =& new PDO(
+			self::$dbh = new PDO(
 				'pgsql:host=' . $db_host . ';dbname=' . $db_name,
 				$db_user,
 				$db_pass
@@ -45,7 +45,7 @@ class db
 		}
 		catch ( PDOException $e )
 		{
-			$captions =& new captions;
+			$captions = new captions;
 
 			$message = $captions->get(
 					'err_db_connect'

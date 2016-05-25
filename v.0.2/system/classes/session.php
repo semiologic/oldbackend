@@ -17,15 +17,20 @@ class session
 
 	public static function init()
 	{
-		self::$captions =& new captions;
-		
-		if ( $_SERVER['HTTP_HOST'] != 'localhost' )
+		self::$captions = new captions;
+
+		$some_name = session_name("semiologic");
+		if ( $_SERVER['HTTP_HOST'] != 'localhost' ) {
 			ini_set('session.cookie_domain', '.semiologic.com');
-		else
+			session_set_cookie_params(0, '/', '.semiologic.com');
+		}
+		else {
 			ini_set('session.cookie_domain', 'localhost');
+			session_set_cookie_params(0, '/', 'localhost');
+		}
 		ini_set('session.cookie_path', '/');
 
-		@ session_start();
+		session_start();
 
 		event::attach('exit', array('session', 'on_exit'));
 	} # init()

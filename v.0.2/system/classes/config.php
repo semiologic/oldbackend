@@ -100,7 +100,7 @@ class config
 	# on_exit()
 	#
 
-	public function on_exit()
+	static public function on_exit()
 	{
 		self::clean();
 

@@ -17,7 +17,7 @@ class domain extends data
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 
@@ -58,15 +58,15 @@ class domain extends data
 
 	public function map()
 	{
-		$field = $this->fields['domain_id'] =& new field($this->domain_id);
+		$field = $this->fields['domain_id'] = new field($this->domain_id);
 		$field->type = 'id';
 
-		$field = $this->fields['domain_name'] =& new textfield($this->domain_name, '');
+		$field = $this->fields['domain_name'] = new textfield($this->domain_name, '');
 		$field->required = true;
 
-		$field = $this->fields['domain_desc'] =& new textarea($this->domain_desc);
+		$field = $this->fields['domain_desc'] = new textarea($this->domain_desc);
 
-		$field = $this->fields['domain_urls'] =& new textarea($this->domain_urls);
+		$field = $this->fields['domain_urls'] = new textarea($this->domain_urls);
 
 
 		new event(__CLASS__ . '_map', $this);

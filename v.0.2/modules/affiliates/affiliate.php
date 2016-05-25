@@ -24,7 +24,7 @@ class affiliate
 
 	public static function init()
 	{
-		self::$captions =& new captions('affiliates');
+		self::$captions = new captions('affiliates');
 	} # init()
 
 
@@ -34,13 +34,13 @@ class affiliate
 
 	public static function map(&$user)
 	{
-		$field = $user->fields['user_paypal'] =& new textfield($user->user_paypal, '');
+		$field = $user->fields['user_paypal'] = new textfield($user->user_paypal, '');
 		$field->type = 'email';
 
-		$user->fields['aff_is_gold'] =& new checkbox($user->aff_is_gold, false);
-		$user->fields['aff_is_reseller'] =& new checkbox($user->aff_is_reseller, false);
+		$user->fields['aff_is_gold'] = new checkbox($user->aff_is_gold, false);
+		$user->fields['aff_is_reseller'] = new checkbox($user->aff_is_reseller, false);
 
-		$field = $user->fields['ref_id'] =& new textfield($user->ref_id, null);
+		$field = $user->fields['ref_id'] = new textfield($user->ref_id, null);
 		$field->type = 'id';
 		$field->readonly = true;
 	} # map()

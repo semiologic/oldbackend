@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once tmp_mc_path . '/utils/db.php';
 require_once tmp_mc_path . '/utils/utils.php';
 
@@ -9,8 +12,6 @@ require_once tmp_mc_path . '/utils/utils.php';
 
 function check_user()
 {
-	@session_start();
-
 	if ( isset($_GET['user_key']) )
 	{
 		$res = db_query("

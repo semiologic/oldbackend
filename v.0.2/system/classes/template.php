@@ -41,9 +41,9 @@ class template
 	# init()
 	#
 
-	public function init()
+	static public function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init
 
 
@@ -125,7 +125,7 @@ class template
 		{
 			$widgets = isset($this->{$panel}) ? $this->{$panel} : array();
 
-			$this->{$panel} =& new panel($panel);
+			$this->{$panel} = new panel($panel);
 
 			foreach ( $widgets as $widget )
 			{

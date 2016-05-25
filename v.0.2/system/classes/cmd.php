@@ -44,7 +44,7 @@ class cmd
 
 		if ( $handler )
 		{
-			$request =& new $handler($args);
+			$request = new $handler($args);
 		}
 		elseif ( config::get('debug') )
 		{

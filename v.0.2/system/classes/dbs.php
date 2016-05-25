@@ -20,7 +20,7 @@ class dbs extends PDOStatement
 
 			if ( isset($error[2]) )
 			{
-				$captions =& new captions;
+				$captions = new captions;
 
 				$message = $captions->get(
 						'err_sql_error',

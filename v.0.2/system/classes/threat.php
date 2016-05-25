@@ -14,7 +14,7 @@ class threat
 
 	public function __construct()
 	{
-		$captions =& new captions;
+		$captions = new captions;
 		$message = $captions->get('security_threat');
 
 		if ( config::get('debug') )

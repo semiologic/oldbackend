@@ -436,7 +436,7 @@ function display_order_details()
 
 <p>You will receive the above url by email. As emails occasionally get caught by spam filters, be sure to check in your junk mail folder if you do not receive them.</p>
 
-<p>Denis de Bernardy<br />
+<p>Mike Koepke<br />
 support at semiologic dot com</p>
 
 <?php
@@ -523,7 +523,7 @@ function display_order_error()
 
 <p>Please try again in a few minutes. If it's not working within the hour, please email support at semiologic dot com. You can alternatively reach me on my <a href="http://www.semiologic.com/about/">cell phone</a> (please mind the time zone if you do).</p>
 
-<p>Denis de Bernardy<br />
+<p>Mike Koepke<br />
 support at semiologic dot com</p>
 
 <?php

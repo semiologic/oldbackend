@@ -64,7 +64,7 @@ class request
 	# self()
 	#
 
-	public function self()
+	public static function self()
 	{
 		if ( !isset(self::$self) )
 		{
@@ -155,7 +155,7 @@ class request
 			$this->exec();
 		}
 
-		$template =& new template($this);
+		$template = new template($this);
 		$template->output($this->args);
 	} # __construct()
 

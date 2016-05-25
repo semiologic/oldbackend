@@ -17,7 +17,7 @@ class doc extends data
 
 	public static function init()
 	{
-		self::$captions =& new captions('docs');
+		self::$captions = new captions('docs');
 	} # init()
 
 
@@ -69,12 +69,12 @@ class doc extends data
 
 		if ( @ $row['cat_id'] )
 		{
-			$this->doc_cat =& new doc_cat($row);
+			$this->doc_cat = new doc_cat($row);
 		}
 
 		if ( @ $row['author_id'] )
 		{
-			$this->author =& new user($row);
+			$this->author = new user($row);
 		}
 	} # __construct()
 
@@ -85,31 +85,31 @@ class doc extends data
 
 	public function map()
 	{
-		$field = $this->fields['doc_id'] =& new field($this->doc_id);
+		$field = $this->fields['doc_id'] = new field($this->doc_id);
 		$field->type = 'id';
 
-		$field = $this->fields['rev_id'] =& new field($this->rev_id);
+		$field = $this->fields['rev_id'] = new field($this->rev_id);
 		$field->type = 'id';
 
-		$this->fields['doc_key'] =& new textfield($this->doc_key);
+		$this->fields['doc_key'] = new textfield($this->doc_key);
 
-		$field = $this->fields['doc_name'] =& new textfield($this->doc_name, '');
+		$field = $this->fields['doc_name'] = new textfield($this->doc_name, '');
 		$field->required = true;
 
-		$this->fields['doc_status'] =& new dropdown($this->doc_status);
+		$this->fields['doc_status'] = new dropdown($this->doc_status);
 
-		$field = $this->fields['doc_modified'] =& new textfield($this->doc_modified);
+		$field = $this->fields['doc_modified'] = new textfield($this->doc_modified);
 		$field->type = 'date';
 
-		$this->fields['doc_excerpt'] =& new textarea($this->doc_excerpt, '');
+		$this->fields['doc_excerpt'] = new textarea($this->doc_excerpt, '');
 
-		$this->fields['doc_content'] =& new textarea($this->doc_content, '');
+		$this->fields['doc_content'] = new textarea($this->doc_content, '');
 
-		$field = $this->fields['cat_id'] =& new dropdown($this->cat_id);
+		$field = $this->fields['cat_id'] = new dropdown($this->cat_id);
 		$field->type = 'id';
 		$field->required = true;
 
-		$field = $this->fields['author_id'] =& new dropdown($this->author_id);
+		$field = $this->fields['author_id'] = new dropdown($this->author_id);
 		$field->type = 'id';
 
 

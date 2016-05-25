@@ -17,7 +17,7 @@ class affiliate_editor implements request_addon
 
 	public static function init()
 	{
-		self::$captions =& new captions('affiliates');
+		self::$captions = new captions('affiliates');
 	} # init()
 
 
@@ -90,7 +90,7 @@ class affiliate_editor implements request_addon
 						)
 					);
 
-				$field =& new textfield;
+				$field = new textfield;
 				$field->readonly = true;
 				$field->label = self::$captions->get('ref_id');
 

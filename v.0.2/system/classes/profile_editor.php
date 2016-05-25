@@ -17,7 +17,7 @@ class profile_editor extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 
@@ -85,11 +85,11 @@ class profile_editor extends request
 		switch ( $this->cmd )
 		{
 		case 'new_profile':
-			$this->data =& new profile;
+			$this->data = new profile;
 			break;
 
 		case 'edit_profile':
-			$this->data =& new profile($this->args['profile_id']);
+			$this->data = new profile($this->args['profile_id']);
 
 			if ( !$this->data->profile_id )
 			{
@@ -111,7 +111,7 @@ class profile_editor extends request
 
 		if ( $this->cmd == 'new_profile' )
 		{
-			$field = $this->data->fields['node_key'] =& new field($this->data->node_key);
+			$field = $this->data->fields['node_key'] = new field($this->data->node_key);
 			$field->required = true;
 			$field->name = 'node_key';
 			$field->value =& $this->data->node_key;
@@ -131,7 +131,7 @@ class profile_editor extends request
 
 		foreach ( $this->data->get_caps() as $cap )
 		{
-			$field = $this->data->fields['caps'][$cap['key']] =& new checkbox($this->data->caps[$cap['key']], $cap['active']);
+			$field = $this->data->fields['caps'][$cap['key']] = new checkbox($this->data->caps[$cap['key']], $cap['active']);
 			$field->id = 'caps__' . $cap['key'];
 			$field->name = 'caps[' . $cap['key'] . ']';
 			$field->label = $cap['name'];

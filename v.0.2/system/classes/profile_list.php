@@ -19,7 +19,7 @@ class profile_list extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 

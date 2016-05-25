@@ -17,7 +17,7 @@ class login extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 
@@ -76,10 +76,10 @@ class login extends request
 
 	public function map()
 	{
-		$this->data =& new data;
+		$this->data = new data;
 
 
-		$field = $this->data->fields['user_email'] =& new textfield($this->data->user_email, '');
+		$field = $this->data->fields['user_email'] = new textfield($this->data->user_email, '');
 		$field->required = true;
 		$field->type = 'email';
 		$field->id = 'user_email';
@@ -88,7 +88,7 @@ class login extends request
 		$field->bind($this->args['user_email']);
 
 
-		$field = $this->data->fields['user_pass'] =& new textfield($this->data->user_pass, '');
+		$field = $this->data->fields['user_pass'] = new textfield($this->data->user_pass, '');
 		$field->type = 'password';
 		$field->required = true;
 		$field->id = 'user_pass';

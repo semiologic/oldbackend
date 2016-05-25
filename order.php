@@ -1,5 +1,4 @@
 <?php
-die('Sold Out');
 
 $GLOBALS['cmd'] = 'order';
 

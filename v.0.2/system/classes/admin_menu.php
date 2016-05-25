@@ -19,7 +19,7 @@ class admin_menu
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 
 		self::add_tab(
 			'new',

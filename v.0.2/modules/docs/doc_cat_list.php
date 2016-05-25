@@ -20,7 +20,7 @@ class doc_cat_list extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions('docs');
+		self::$captions = new captions('docs');
 	} # init()
 
 

@@ -17,7 +17,7 @@ class status_403_memberships implements request_addon
 
 	public static function init()
 	{
-		self::$captions =& new captions('memberships');
+		self::$captions = new captions('memberships');
 	} # init()
 
 
@@ -182,7 +182,7 @@ $db_pass = config::get('db_pass');
 
 try
 {
-	$dbh =& new PDO(
+	$dbh = new PDO(
 		'pgsql:host=' . $db_host . ';dbname=' . $db_name,
 		$db_user,
 		$db_pass

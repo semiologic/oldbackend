@@ -59,10 +59,10 @@ if ( !ini_get('auto_detect_line_endings') )
 
 ini_set('default_charset', config::get('charset'));
 
-
 # Load defaults
 
 defaults::load();
+
 
 
 # Load modules
@@ -91,14 +91,11 @@ register_shutdown_function('on_shutdown');
 
 ob::start();
 
-
 # Init hook
 
 new event('init');
 
-
 # Preprocess Request
-
 new event('preprocess');
 
 endif;

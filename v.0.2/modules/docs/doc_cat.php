@@ -17,7 +17,7 @@ class doc_cat extends data
 
 	public static function init()
 	{
-		self::$captions =& new captions('docs');
+		self::$captions = new captions('docs');
 	} # init()
 
 
@@ -58,18 +58,18 @@ class doc_cat extends data
 
 	public function map()
 	{
-		$field = $this->fields['cat_id'] =& new field($this->cat_id);
+		$field = $this->fields['cat_id'] = new field($this->cat_id);
 		$field->type = 'id';
 
-		$field = $this->fields['cat_name'] =& new textfield($this->cat_name, '');
+		$field = $this->fields['cat_name'] = new textfield($this->cat_name, '');
 		$field->required = true;
 
-		$this->fields['cat_key'] =& new textfield($this->cat_key);
+		$this->fields['cat_key'] = new textfield($this->cat_key);
 
-		$field = $this->fields['cat_version'] =& new textfield($this->cat_version, '');
+		$field = $this->fields['cat_version'] = new textfield($this->cat_version, '');
 		$field->required = true;
 
-		$this->fields['cat_desc'] =& new textarea($this->cat_desc, '');
+		$this->fields['cat_desc'] = new textarea($this->cat_desc, '');
 
 
 		new event(__CLASS__ . '_map', $this);

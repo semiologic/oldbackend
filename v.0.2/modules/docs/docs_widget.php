@@ -17,7 +17,7 @@ class docs_widget extends widget
 
 	public static function init()
 	{
-		self::$captions =& new captions('docs');
+		self::$captions = new captions('docs');
 	} # init()
 
 

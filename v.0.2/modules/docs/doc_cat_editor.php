@@ -17,7 +17,7 @@ class doc_cat_editor extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions('docs');
+		self::$captions = new captions('docs');
 
 		event::attach('doc_cat_check_exists', array(__CLASS__, 'check_exists'));
 	} # init()
@@ -70,11 +70,11 @@ class doc_cat_editor extends request
 		switch ( $this->cmd )
 		{
 		case 'new_doc_cat':
-			$this->data =& new doc_cat;
+			$this->data = new doc_cat;
 			break;
 
 		case 'edit_doc_cat':
-			$this->data =& new doc_cat($this->args['cat_id']);
+			$this->data = new doc_cat($this->args['cat_id']);
 
 			if ( !$this->data->cat_id )
 			{
@@ -96,7 +96,7 @@ class doc_cat_editor extends request
 
 		if ( $this->cmd == 'new_doc_cat' )
 		{
-			$field = $this->data->fields['node_key'] =& new field($this->data->node_key);
+			$field = $this->data->fields['node_key'] = new field($this->data->node_key);
 			$field->required = true;
 			$field->name = 'node_key';
 			$field->value =& $this->data->node_key;
@@ -146,11 +146,11 @@ class doc_cat_editor extends request
 
 			while ( $row = $dbs->get_row() )
 			{
-				$field = $this->data->fields['profile'][$profile_id] =& new checkbox($this->data->profile[$profile_id], $profile_is_active);
+				$field = $this->data->fields['profile'][$profile_id] = new checkbox($this->data->profile[$profile_id], $profile_is_active);
 				$field->id = 'profile__' . $profile_id;
 				$field->label = $profile_name;
 
-				$profile =& new profile($row);
+				$profile = new profile($row);
 
 				if ( $profile->can('manage_access') )
 				{

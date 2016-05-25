@@ -227,9 +227,8 @@ function send_order_emails($order_id, $old_status)
 	{
 		$sig = "\n"
 			. '--  ' . "\n"
-			. 'Denis de Bernardy  ' . "\n"
-			. '+52 (1) 984 108 0703 (CST)  ' . "\n"
-			. 'denis@mesoconcepts.com';
+			. 'Mike Koepke  ' . "\n"
+			. 'support@semiologic.com';
 
 		if ( $order['aff_id'] )
 		{
@@ -453,9 +452,8 @@ function display_order_details()
 
 <p>Your paypal address will receive a copy of these download instructions as well. They sometimes get caught by spam filters, so be sure to check in your junk mail folder as well.</p>
 
-<p>Denis de Bernardy<br />
-+52 (1) 984 108 0703 (CST)<br />
-denis at mesoconcepts dot com</p>
+<p>Mike Koepke<br />
+support at semiologic dot com</p>
 
 </div>
 <?php
@@ -477,7 +475,7 @@ function display_order_error()
 
 <p>Please try again in a few minutes. If it's not working within the hour, please email support at semiologic dot com. You can alternatively reach me on my <a href="http://www.semiologic.com/about/">cell phone</a> (please mind the time zone if you do).</p>
 
-<p>Denis de Bernardy<br />
+<p>Mike Koepke<br />
 support at semiologic dot com</p>
 
 </div>

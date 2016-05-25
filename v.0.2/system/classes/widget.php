@@ -50,7 +50,7 @@ abstract class widget
 
 	public function __call($method, $args = null)
 	{
-		$captions =& new captions;
+		$captions = new captions;
 
 		throw new exception($captions->get('undefined_widget_method', array('widget' => get_class($this), 'method' => $method)));
 	} # __call()

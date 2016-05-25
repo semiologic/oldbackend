@@ -17,7 +17,7 @@ class user extends data
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 
@@ -65,25 +65,25 @@ class user extends data
 
 	public function map()
 	{
-		$field = $this->fields['user_id'] =& new field($this->user_id);
+		$field = $this->fields['user_id'] = new field($this->user_id);
 		$field->type = 'id';
 
-		$field = $this->fields['user_key'] =& new textfield($this->user_key);
+		$field = $this->fields['user_key'] = new textfield($this->user_key);
 		$field->readonly = true;
 
-		$field = $this->fields['user_name'] =& new textfield($this->user_name, '');
+		$field = $this->fields['user_name'] = new textfield($this->user_name, '');
 		$field->required = true;
 
-		$this->fields['user_phone'] =& new textfield($this->user_phone, '');
+		$this->fields['user_phone'] = new textfield($this->user_phone, '');
 
-		$field = $this->fields['user_email'] =& new textfield($this->user_email, '');
+		$field = $this->fields['user_email'] = new textfield($this->user_email, '');
 		$field->type = 'email';
 		$field->required = true;
 
-		$field = $this->fields['user_pass'] =& new textfield($this->user_pass, '');
+		$field = $this->fields['user_pass'] = new textfield($this->user_pass, '');
 		$field->type = 'password';
 
-		$this->fields['is_admin'] =& new checkbox($this->is_admin, false);
+		$this->fields['is_admin'] = new checkbox($this->is_admin, false);
 
 
 		new event(__CLASS__ . '_map', $this);

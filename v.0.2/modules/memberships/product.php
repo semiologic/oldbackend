@@ -17,7 +17,7 @@ class product extends data
 
 	public static function init()
 	{
-		self::$captions =& new captions('products');
+		self::$captions = new captions('products');
 	} # init()
 
 
@@ -68,19 +68,19 @@ class product extends data
 
 	public function map()
 	{
-		$field = $this->fields['product_id'] =& new field($this->product_id);
+		$field = $this->fields['product_id'] = new field($this->product_id);
 		$field->type = 'id';
 
-		$this->fields['product_key'] =& new textfield($this->product_key);
+		$this->fields['product_key'] = new textfield($this->product_key);
 
-		$field = $this->fields['product_name'] =& new textfield($this->product_name, '');
+		$field = $this->fields['product_name'] = new textfield($this->product_name, '');
 		$field->required = true;
 
-		$field = $this->fields['product_price'] =& new textfield($this->product_price, 0);
+		$field = $this->fields['product_price'] = new textfield($this->product_price, 0);
 		$field->type = 'float';
 		$field->required = true;
 
-		$this->fields['product_desc'] =& new textarea($this->product_desc, '');
+		$this->fields['product_desc'] = new textarea($this->product_desc, '');
 
 
 		new event(__CLASS__ . '_map', $this);

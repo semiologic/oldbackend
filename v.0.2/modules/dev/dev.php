@@ -147,7 +147,7 @@ class request
 		{
 			foreach ( @ (array) self::$addons[$class] as $addon )
 			{
-				$addon =& new $addon($this);
+				$addon = new $addon($this);
 
 				foreach ( $this->procedure as $step )
 				{

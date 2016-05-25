@@ -17,7 +17,7 @@ class users_widget extends widget
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 

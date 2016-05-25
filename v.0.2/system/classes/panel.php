@@ -25,7 +25,7 @@ class panel
 		if ( !is_object($widget) )
 		{
 			@ list ( $widget_class, $widget_id ) = $widget;
-			$widget =& new $widget_class($widget_id);
+			$widget = new $widget_class($widget_id);
 		}
 
 		$this->widgets[] =& $widget;

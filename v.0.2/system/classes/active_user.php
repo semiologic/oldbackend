@@ -18,7 +18,7 @@ class active_user
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 
 		self::$user =& session::get('active_user');
 	} # init()
@@ -28,7 +28,7 @@ class active_user
 	# autologin()
 	#
 
-	public function autologin()
+	static public function autologin()
 	{
 		if ( ( $_SERVER['REQUEST_METHOD'] !== 'GET' ) )
 		{
@@ -40,6 +40,7 @@ class active_user
 			$is_post = false;
 			$args =& $_GET;
 		}
+
 
 		if ( isset($args['user_key']) )
 		{
@@ -71,9 +72,9 @@ class active_user
 				unset($url['query']['user_key']);
 
 				$url = url::glue($url);
-				
+
 				$url = preg_replace("|^.+?://[^/]+|", '', $url);
-				
+
 				$_SERVER['REQUEST_URI'] = $url;
 				#debug::dump($_SERVER['REQUEST_URI']); die;
 				#permalink::redirect($url);

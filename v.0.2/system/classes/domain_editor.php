@@ -17,7 +17,7 @@ class domain_editor extends request
 
 	public static function init()
 	{
-		self::$captions =& new captions;
+		self::$captions = new captions;
 	} # init()
 
 
@@ -89,12 +89,12 @@ class domain_editor extends request
 		switch ( $this->cmd )
 		{
 		case 'new_domain':
-			$this->data =& new domain;
+			$this->data = new domain;
 			break;
 
 		case 'edit_domain':
 		case 'delete_domain':
-			$this->data =& new domain($this->args['domain_id']);
+			$this->data = new domain($this->args['domain_id']);
 
 			if ( !$this->data->domain_id )
 			{
@@ -105,7 +105,7 @@ class domain_editor extends request
 
 		if ( $this->cmd == 'new_domain' )
 		{
-			$field = $this->data->fields['node_key'] =& new field($this->data->node_key);
+			$field = $this->data->fields['node_key'] = new field($this->data->node_key);
 			$field->required = true;
 			$field->name = 'node_key';
 			$field->value =& $this->data->node_key;
@@ -165,11 +165,11 @@ class domain_editor extends request
 
 			while ( $row = $dbs->get_row() )
 			{
-				$field = $this->data->fields['profile'][$profile_id] =& new checkbox($this->data->profile[$profile_id], $profile_is_active);
+				$field = $this->data->fields['profile'][$profile_id] = new checkbox($this->data->profile[$profile_id], $profile_is_active);
 				$field->id = 'profile__' . $profile_id;
 				$field->label = $profile_name;
 
-				$profile =& new profile($row);
+				$profile = new profile($row);
 
 				if ( $profile->can('manage_access') )
 				{

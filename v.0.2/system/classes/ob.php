@@ -14,7 +14,7 @@ class ob
 
 	public static function start()
 	{
-		ob_start(array('ob', 'on_flush'));
+		ob_start(array('ob', 'on_ob_flush'));
 
 		# Start debug mode
 
@@ -64,7 +64,7 @@ class ob
 
 	# Register ob_flush hook
 
-	function on_ob_flush($buffer)
+	static function on_ob_flush($buffer)
 	{
 		new event('ob_flush', $buffer);
 
